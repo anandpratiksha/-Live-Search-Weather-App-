@@ -1,23 +1,37 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./css/style.css"
 
 function Tempapp() {
 
     const [city, setCity] = useState(null);
+    const [search, setSearch] = useState("mumbai");
+
+    useEffect(() => {
+        const fetchApi = async () => {
+            const url = `http://api.openweathermap.org/data/2.5/weather?q=${search}&appid=cd90f511e9334b6a65414551ef73f99b`;
+            const response = await fetch(url);
+            // console.log(response)
+            const resJson = await response.json();
+            console.log(resJson)
+            setCity(resJson);
+        }
+        fetchApi();
+    }, [setSearch])
+
     return (
         <div className="box">
             <div className="inputData">
                 <input
                     type="search"
                     className="inputFeild"
-                    onClick={(event) => {
-
+                    onChange={(event) => {
+                        setSearch(event.target.value);
                     }}
                 />
             </div>
             <div className="info">
                 <h2 className="location">
-                    <i class="fas fa-street-view">{city}</i>
+                    <i className="fas fa-street-view">{search}</i>
                 </h2>
                 <h1 className="temp">
 
