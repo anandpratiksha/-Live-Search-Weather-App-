@@ -20,16 +20,27 @@ html{
 }
 
 .box{
-    width:25vw;
-    height: 60vh;
     border-radius: 0.5rem;
-    box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.2rem 3rem rgba(0, 0, 0, 0.301);
     background: #a5bbdd;
     position: relative;
     overflow: hidden;
     transform: translate3d(0,0,0);
     min-width: 20rem;
-    min-height:35rem;
+    min-height:30rem;
+    display: grid;
+    justify-content:center
+}
+
+input{
+    height:30px;
+    margin-top:20px;
+    background-color:transparent;
+    border: none;
+    border-bottom:1px solid #0432ff;
+    outline: none;
+    font-size:1.3rem;
+    text-align: center;
 }
 
 .wave{

@@ -4,7 +4,7 @@ import "./css/style.css"
 function Tempapp() {
 
     const [city, setCity] = useState(null);
-    const [search, setSearch] = useState("mumbai");
+    const [search, setSearch] = useState("Pune");
 
     useEffect(() => {
         const fetchApi = async () => {
@@ -28,6 +28,7 @@ function Tempapp() {
                         setSearch(event.target.value);
                     }}
                     value={search}
+                    placeholder="Enter City Name"
                 />
             </div>
             {!city ? (
